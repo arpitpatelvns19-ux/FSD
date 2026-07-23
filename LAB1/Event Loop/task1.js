@@ -22,3 +22,8 @@ function main() {
 }
 main();
 //javascript is syncronous and single threaded
+//in asyncross we use event loop to manage call stack
+// 1.set timeout
+// 2 set immediate
+// 3 process.nexttick
+// 4 setIntrval

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Arpit Patel</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+    transition:.4s;
+}
+
+header{
+    background:#222;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00c3ff;
+}
+
+#mode{
+    padding:8px 15px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:80px 8%;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero h1 span{
+    color:#00bcd4;
+}
+
+.hero h2{
+    margin:15px 0;
+}
+
+.hero p{
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#00bcd4;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.hero img{
+    width:320px;
+    border-radius:50%;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+section{
+    padding:80px 8%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.project:hover{
+    transform:scale(1.05);
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+input,textarea{
+    margin:10px 0;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    padding:15px;
+    background:#00bcd4;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .card,
+.dark .project{
+    background:#222;
+    color:white;
+}
+
+.dark input,
+.dark textarea{
+    background:#333;
+    color:white;
+    border:none;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero img{
+    margin-top:40px;
+    width:250px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<nav>
+
+<h2 class="logo">Portfolio</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button id="mode">🌙</button>
+
+</nav>
+
+</header>
+
+<section id="home" class="hero reveal">
+
+<div class="hero-text">
+
+<h1>Hello, I'm <span>Arpit Patel</span></h1>
+
+<h2>Computer Science Student</h2>
+
+<p>
+I am passionate about Web Development, C++, JavaScript and creating responsive websites.
+</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+</div>
+
+<img src="https://via.placeholder.com/320" alt="Profile">
+
+</section>
+
+<section id="about" class="reveal">
+
+<h2>About Me</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;line-height:1.8;">
+I am a Computer Science Engineering student who enjoys building responsive websites,
+learning new technologies, and solving programming problems. My goal is to become
+a Full Stack Developer and Software Engineer.
+</p>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="card">HTML5</div>
+<div class="card">CSS3</div>
+<div class="card">JavaScript</div>
+<div class="card">C++</div>
+<div class="card">Python</div>
+<div class="card">Git & GitHub</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="reveal">
+
+<h2>Projects</h2>
+
+<div class="project-container">
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>A responsive portfolio website using HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="project">
+<h3>Amazon Clone</h3>
+<p>Frontend clone of Amazon homepage with responsive design.</p>
+</div>
+
+<div class="project">
+<h3>Student Management System</h3>
+<p>C++ project using file handling and object-oriented programming.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="reveal">
+
+<h2>Contact Me</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p></p>
+
+</footer>
+
+<script>
+const mode=document.getElementById("mode");
+
+mode.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+mode.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙";
+
+};
+
+function reveal(){
+
+const reveals=document.querySelectorAll(".reveal");
+
+reveals.forEach(function(item){
+
+const top=item.getBoundingClientRect().top;
+
+const visible=100;
+
+if(top<window.innerHeight-visible){
+
+item.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+</script>
+
+</body>
+</html>

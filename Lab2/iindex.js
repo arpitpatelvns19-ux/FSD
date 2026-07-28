@@ -20,3 +20,8 @@ const readContent = (fname) => {
 
 addContent("notes.txt", "FS is easy in JS");
 console.log(readContent("notes.txt"));
+
+
+await appendData("notes.txt", "it can add, read and update content");
+console.log("Contents\n",await readContent("notes.txt"));
+await appendData("notes.txt","it can"

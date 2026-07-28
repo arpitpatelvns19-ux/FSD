@@ -24,4 +24,4 @@ console.log(readContent("notes.txt"));
 
 await appendData("notes.txt", "it can add, read and update content");
 console.log("Contents\n",await readContent("notes.txt"));
-await appendData("notes.txt","it can"
+await appendData("notes.txt","it can")

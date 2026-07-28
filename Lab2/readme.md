@@ -11,3 +11,6 @@ directory mannegement -> mkdir(), rmdir(),readdir()
 -metadeta/information-> stat(),lstat(),fstat()
 - watching for changes -> watch() , watchFile(), unwatchFile(),
 streaming large file -> createReadStream(),createWriteStream()
+
+
+that a sink function willl also accesed bu await either-

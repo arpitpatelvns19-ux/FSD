@@ -1,0 +1,58 @@
+import readline from "readline/promises";
+import { stdin , stdout  } from "process";
+import { readFileSync , writeFileSync  } from "fs/promises";
+const FILE = "products.json";
+const getCart = async () => {
+    const data = readFileSync(FILE, "utf-8");
+    return JSON.parse(data);
+};
+
+const saveCart = async (cart) => {
+    writeFileSync(FILE, JSON.stringify(cart, null, 2), "utf-8");
+};
+
+const addToCart = async (item) => {
+    const cart = await getCart();
+    cart.push(item);
+    await saveCart(cart);
+    if(isFoundIncart){
+        isFoundIncart.quantity += item.quantity;
+    }else
+}
+console.table(cart);
+const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+console.log(`Total: $${total.toFixed(2)}`);
+
+
+
+const main = async () =>{
+    let choice;
+    const cin = readline.createInterface({ input: stdin, output: stdout });
+    do{
+        console.log("welcome to Amazon Shopping 🛒");
+        console.log("1............Show Cart");
+        console.log("2............Add Item");
+        console.log("3............Remove Item");
+        console.log("4............Exit");
+        choice = await cin.question("Enter your choice: ");
+
+        switch(Number(choice)){
+            case 1:
+                const cart = await getCart();
+                console.log("Show Cart");
+                break;
+            case 2:
+                console.log("Add Item");
+                break;
+            case 3:
+                console.log("Remove Item");
+                break;
+            case 4:
+                console.log("Exiting...");
+                break;
+            default:
+                console.log("⚠️Invalid choice. Please try again.");
+        }
+    }while(Number(choice) !== 4);
+    cin.close();
+};

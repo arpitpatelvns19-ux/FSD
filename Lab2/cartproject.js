@@ -1,6 +1,7 @@
 import readLine from "readline/promises";
 import { stdin, stdout } from "process";
 import { readFile, writeFile } from "fs/promises";
+import { log } from "console";
 
 // Database using file starts
 const FILE = "cart.json";
@@ -29,6 +30,21 @@ const addToCart = async (product) => {
     await saveCart(cart);
     console.log(`${product.name} added/updated to 🛒`);
 };
+const removeProduct = async (pid) =>{
+    const cart = await getCart();
+    const isFoundInCart=cart.find((item)=>item.id===pid);
+    let x = cart.length;
+    const newProduct=cart.filter((item)=>item.id!==pid);
+    let y = newProduct.length;
+    if(y<x)
+    {
+        saveCart(newProduct)
+        log("product deleted")
+    }
+    else
+        log("product not found")
+};
+
 
 const displayCart = async () => {
     const cart = await getCart();

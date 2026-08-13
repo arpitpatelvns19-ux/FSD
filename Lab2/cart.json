@@ -6,11 +6,6 @@
     "qty": 4
   },
   {
-    "id": 3,
-    "price": null,
-    "qty": null
-  },
-  {
     "id": 1,
     "name": "ball",
     "price": 100,

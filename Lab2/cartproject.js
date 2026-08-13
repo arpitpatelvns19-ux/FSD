@@ -30,21 +30,6 @@ const addToCart = async (product) => {
     await saveCart(cart);
     console.log(`${product.name} added/updated to 🛒`);
 };
-const removeProduct = async (pid) =>{
-    const cart = await getCart();
-    const isFoundInCart=cart.find((item)=>item.id===pid);
-    let x = cart.length;
-    const newProduct=cart.filter((item)=>item.id!==pid);
-    let y = newProduct.length;
-    if(y<x)
-    {
-        saveCart(newProduct)
-        log("product deleted")
-    }
-    else
-        log("product not found")
-};
-
 
 const displayCart = async () => {
     const cart = await getCart();
@@ -63,6 +48,21 @@ const displayCart = async () => {
     );
 
     console.log(`Total Payable Amount Rs. ${total}`);
+};
+
+const removeProduct = async (pid) => {
+    const cart = await getCart();
+    // const isFoundInCart = cart.find((item) => item.id === pid);
+    let x = cart.length;
+    const newProducts = cart.filter((item) => item.id !== pid);
+    let y = newProducts.length;
+    if(x > y){
+        console.log(`Product with id ${pid} is removed from cart`);
+        await saveCart(newProducts);
+    }
+    else{
+        console.log(`Product with id ${pid} not found`);
+    }
 };
 
 const main = async () => {
@@ -105,7 +105,10 @@ const main = async () => {
                 break;
 
             case 3:
-                console.log("Remove Product");
+                let pid = await cin.question(
+                    "Enter the id of product to remove: "
+                );
+                await removeProduct(Number(pid));               
                 break;
 
             case 4:

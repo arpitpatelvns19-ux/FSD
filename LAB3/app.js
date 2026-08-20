@@ -1,12 +1,8 @@
 import http from "http";
 
-const server =http.createServer();
-server.on ('request',(req,res)=> {
-    res.write("<h1>welcome to server side programming </h1>");
-    res.write("<h2> nodemon is tracking the fie</h2>");
-    res.end();
-
-})
+const server =http.createServer((req,res)=>{
+    res.end(" <h2> welcome to serverside</h2>");
+});
 server.listen(5000,()=>{
     console.log("server is running")
 });

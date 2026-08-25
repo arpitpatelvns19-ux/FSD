@@ -13,7 +13,7 @@ const server = http.createServer((req,res)=>{
             <p>Discount: 5%</p>
             <a href='#'>Buy Now</a>        
     `);
-    
+     
     else{
         res.statusCode=404;
         res.end(`<h1>404 ,Not Found</h1>

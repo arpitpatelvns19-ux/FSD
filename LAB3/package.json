@@ -1,11 +1,11 @@
 {
   "name": "lab3",
   "version": "1.0.0",
-  "description": "http- hypertext transfer protocall\r html-hypertext markup language\r css- cascading style sheet\r npm - node package management\r npn in",
-  "main": "app.js",
+  "description": "HTTP - Hypertext Transfer Protocol",
+  "main": "prg9.js",
   "scripts": {
-    "start": "node app.js",
-    "dev":"nodemon app.js"
+    "start": "node prg9.js",
+    "dev": "nodemon prg9.js"
   },
   "keywords": [],
   "author": "",

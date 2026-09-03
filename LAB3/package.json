@@ -2,10 +2,10 @@
   "name": "lab3",
   "version": "1.0.0",
   "description": "HTTP - Hypertext Transfer Protocol",
-  "main": "prg9.js",
+  "main": "prg11.js",
   "scripts": {
-    "start": "node prg9.js",
-    "dev": "nodemon prg9.js"
+    "start": "node prg11.js",
+    "dev": "nodemon prg11.js"
   },
   "keywords": [],
   "author": "",
